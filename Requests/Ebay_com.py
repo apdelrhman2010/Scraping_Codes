@@ -8,7 +8,7 @@ def extract(page):
         'User-Agent' : 'Mozilla/5.0 (X11; Linux x86_64; rv:103.0) Gecko/20100101 Firefox/103.0'
     }
     r = requests.get(url, headers=headers)
-    print(r)
+    #print(r)
     soup = bs(r.content, 'html.parser')
     return soup
 def parse(soup):
@@ -16,4 +16,6 @@ def parse(soup):
     return len(divs)
 print('hi')
 c = extract(1)
-print(c)
+print(c.prettify)
+parsed=parse(c)
+print(parsed)
